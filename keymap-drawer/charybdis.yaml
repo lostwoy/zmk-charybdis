@@ -30,7 +30,7 @@ layers:
   - P
   - ESC
   - ENTER
-  - {t: DEL, h: FUNC}
+  - {t: ., h: FUNC}
   - Ctl+A
   - {t: SPACE, h: NAV}
   - TAB
