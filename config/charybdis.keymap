@@ -21,10 +21,10 @@
         BASE {
             display-name = "BASE";
             bindings = <
-                &kp B     &kp L     &kp D     &kp C     &kp V         &kp J     &kp F        &kp O       &kp U        &kp COMMA
+                &kp B     &kp L     &kp D     &kp W     &kp Z         &kp COMMA     &kp F        &kp O       &kp U        &kp J
                 &hm_l LGUI N  &hm_l LALT R  &hm_l LSHFT T  &hm_l LCTRL S  &kp G    &kp Y  &hm_r RCTRL H  &hm_r RSHFT A  &hm_r RALT E  &hm_r RGUI I
-                &kp X     &kp Q     &kp M     &kp W     &kp Z         &kp K     &kp P        &kp ESC     &kp ENTER    &lt FUNC DEL
-                          &kp ENTER &lt NAV SPACE &mt LSFT TAB          &mo SYM   &lt NUM BSPC
+                &kp Q     &kp X     &kp M     &kp C     &kp V         &kp K     &kp P        &kp ESC     &kp ENTER    &lt FUNC DEL
+                          &kp LC(A) &lt NAV SPACE &kp TAB          &mo SYM   &lt NUM BSPC
             >;
         };
 
@@ -34,7 +34,7 @@
                 &none     &none     &none     &none     &none         &none     &none     &none     &none      &kp EQUAL
                 &kp LGUI  &kp LALT  &kp LSHFT &kp LCTRL &none         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp MINUS
                 &none     &none     &none     &none     &none         &none     &none     &none     &none      &none
-                          &none     &none     &none                   &none     &none
+                          &none     &none     &none                   &none     &kp BSPC
             >;
         };
 
@@ -71,11 +71,11 @@
         MOUSE {
             display-name = "MOUSE";
             bindings = <
-                &trans    &trans    &trans    &trans    &trans        &trans    &trans     &trans     &trans    &trans
-                &trans    &mkp LCLK &mkp MCLK &mkp RCLK &trans        &trans    &mkp LCLK  &mkp MCLK  &mkp RCLK &trans
-                &trans    &trans    &mo SCROLL &mo SNIPE &trans       &trans    &mo SCROLL &mo SNIPE  &trans    &trans
-                          &trans    &trans    &trans                  &trans    &trans
-            >;
+			&trans    &trans    &trans     &trans    &trans        &trans    &trans     &trans     &trans    &trans
+			&trans    &mkp LCLK &mkp MCLK  &mkp RCLK &trans        &trans    &mkp LCLK  &mkp MCLK  &mkp RCLK &trans
+			&trans    &trans    &mo SCROLL &mo SNIPE &trans        &trans    &mo SCROLL &mo SNIPE  &trans    &trans
+					  &mkp MCLK &mkp LCLK  &mkp RCLK                &trans    &trans
+			>;
         };
 
         SCROLL {

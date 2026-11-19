@@ -1,17 +1,17 @@
-// #define COMBO_TERM 35
-// #define COMBO_PRIOR_IDLE 75
-//
-// / {
-//     combos {
-//         compatible = "zmk,combos";
-//
-//         // Example: D + C on the top row => left click
-//         combo_left_click {
-//             timeout-ms = <COMBO_TERM>;
-//             require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
-//             bindings = <&mkp LCLK>;
-//             key-positions = <2 3>;
-//             // layers = <BASE>;   // optional: restrict to a layer
-//         };
-//     };
-// };
+#define COMBO_TERM 35
+#define COMBO_PRIOR_IDLE 75
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        // D & O on the top row => Toggle caps word
+        combo_cap_word {
+            timeout-ms = <COMBO_TERM>;
+            require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+            bindings = <&caps_word>;
+            key-positions = <2 7>;
+            layers = <BASE>;   // optional: restrict to a layer
+        };
+    };
+};

@@ -4,13 +4,13 @@ layers:
   - B
   - L
   - D
-  - C
-  - V
-  - J
+  - W
+  - Z
+  - ','
   - F
   - O
   - U
-  - ','
+  - J
   - {t: N, h: LGUI}
   - {t: R, h: LALT}
   - {t: T, h: LSHFT}
@@ -21,19 +21,19 @@ layers:
   - {t: A, h: RSHFT}
   - {t: E, h: RALT}
   - {t: I, h: RGUI}
-  - X
   - Q
+  - X
   - M
-  - W
-  - Z
+  - C
+  - V
   - K
   - P
   - ESC
   - ENTER
   - {t: DEL, h: FUNC}
-  - ENTER
+  - Ctl+A
   - {t: SPACE, h: NAV}
-  - {t: TAB, h: LSFT}
+  - TAB
   - SYM
   - {t: BSPC, h: NUM}
   NAV:
@@ -71,7 +71,7 @@ layers:
   - {type: held}
   - ''
   - ''
-  - ''
+  - BSPC
   NUM:
   - ''
   - '7'
@@ -211,9 +211,9 @@ layers:
   - SNIPE
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mkp MCLK'
+  - '&mkp LCLK'
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   SCROLL:
@@ -324,3 +324,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+combos:
+- p: [2, 7]
+  k: '&caps_word'
+  l: [BASE]
