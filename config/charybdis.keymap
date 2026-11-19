@@ -14,10 +14,6 @@
 #include "behaviors.dtsi"
 #include "combos.dtsi"
 
-&lt {
-    tapping-term-ms = <160>; // hold time before a layer-tap activates the layer instead of sending the tap key
-};
-
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -25,113 +21,91 @@
         BASE {
             display-name = "BASE";
             bindings = <
-            // ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮   ╭─────────────┬──────────────┬─────────────┬─────────────┬────────────────╮
-                 &kp Q         &kp W         &kp E         &kp R          &kp T             &kp Y         &kp U          &kp I         &kp O         &kp P
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &hm_l LCTRL A &hm_l LALT S  &hm_l LGUI D  &hm_l LSHFT F  &kp G             &kp H         &hm_r RSHFT J  &hm_r RGUI K  &hm_r RALT L  &hm_r RCTRL SEMI
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &kp Z         &kp X         &kp C         &kp V          &kp B             &kp N         &kp M          &kp COMMA     &kp DOT       &kp SLASH
-            // ╰─────────────┴─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┴─────────────┴────────────────╯
-                                             &kp C_MUTE    &mo 1          &lt 3 ENTER       &lt 3 SPACE   &lt 2 BSPC
-            //                             ╰─────────────┴──────────────┴─────────────╯   ╰─────────────┴──────────────╯
+                &kp B     &kp L     &kp D     &kp C     &kp V         &kp J     &kp F        &kp O       &kp U        &kp COMMA
+                &hm_l LGUI N  &hm_l LALT R  &hm_l LSHFT T  &hm_l LCTRL S  &kp G    &kp Y  &hm_r RCTRL H  &hm_r RSHFT A  &hm_r RALT E  &hm_r RGUI I
+                &kp X     &kp Q     &kp M     &kp W     &kp Z         &kp K     &kp P        &kp ESC     &kp ENTER    &lt FUNC DEL
+                          &kp ENTER &lt NAV SPACE &mt LSFT TAB          &mo SYM   &lt NUM BSPC
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        NUMS {
-            display-name = "NUMS";
+        NAV {
+            display-name = "NAV";
             bindings = <
-            // ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮   ╭─────────────┬──────────────┬─────────────┬─────────────┬────────────────╮
-                 &kp EXCL      &kp AT        &kp HASH      &kp DLLR       &kp PRCNT         &kp CARET     &kp AMPS       &kp ASTRK     &kp LPAR      &kp RPAR
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &kp N1        &kp N2        &kp N3        &kp N4         &kp N5            &kp MINUS     &kp EQUAL      &kp GRAVE     &kp LBKT      &kp RBKT
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &kp N6        &kp N7        &kp N8        &kp N9         &kp N0            &kp UNDER     &kp PLUS       &kp TILDE     &kp PIPE      &kp BSLH
-            // ╰─────────────┴─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┴─────────────┴────────────────╯
-                                             &trans        &kp C_PP       &trans            &trans        &trans
-            //                             ╰─────────────┴──────────────┴─────────────╯   ╰─────────────┴──────────────╯
+                &none     &none     &none     &none     &none         &none     &none     &none     &none      &kp EQUAL
+                &kp LGUI  &kp LALT  &kp LSHFT &kp LCTRL &none         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &kp MINUS
+                &none     &none     &none     &none     &none         &none     &none     &none     &none      &none
+                          &none     &none     &none                   &none     &none
             >;
-            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
-        DANGER {
-            display-name = "DANGER";
+        NUM {
+            display-name = "NUM";
             bindings = <
-            // ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮   ╭─────────────┬──────────────┬─────────────┬─────────────┬────────────────╮
-                 &kp F1        &kp F2        &kp F3        &kp F4         &kp F5            &kp F6        &kp F7         &kp F8        &kp F9        &bt BT_CLR
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &kp C_MUTE    &kp C_PREV    &kp C_NEXT     &kp C_PP          &kp LEFT      &kp DOWN       &kp UP        &kp RIGHT     &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4      &out OUT_TOG  &kp C_VOL_DN   &kp C_VOL_UP  &trans        &trans
-            // ╰─────────────┴─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┴─────────────┴────────────────╯
-                                             &kp C_PP      &out OUT_BLE   &out OUT_USB      &trans        &trans
-            //                             ╰─────────────┴──────────────┴─────────────╯   ╰─────────────┴──────────────╯
+                &none     &kp N7    &kp N8    &kp N9    &none         &none          &none      &none      &none     &none
+                &none     &kp N4    &kp N5    &kp N6    &none         &none          &kp RCTRL  &kp RSHFT  &kp RALT  &kp RGUI
+                &none     &kp N1    &kp N2    &kp N3    &none         &studio_unlock &kp PSCRN  &none      &none     &none
+                          &none     &kp N0    &none                   &none     &none
             >;
-            sensor-bindings = <&scroll_encoder>;
+        };
+
+        SYM {
+            display-name = "SYM";
+            bindings = <
+                &kp GRAVE &kp EXCL  &kp LBRC  &kp RBRC  &kp HASH      &kp QMARK &kp LBKT  &kp RBKT  &kp PLUS   &kp AT
+                &kp AMPS  &kp CARET &kp EQUAL &kp UNDER &kp DLLR      &kp APOS  &kp LPAR  &kp RPAR  &kp SEMI   &kp COLON
+                &kp TILDE &kp LT    &kp PIPE  &kp MINUS &kp GT        &kp FSLH  &kp STAR  &kp DOT   &kp DQT    &none
+                          &none     &kp BSLH  &kp PRCNT               &none     &none
+            >;
+        };
+
+        FUNC {
+            display-name = "FUNC";
+            bindings = <
+                &none     &kp F7    &kp F8    &kp F9    &kp F12       &none     &none      &none      &none     &none
+                &none     &kp F4    &kp F5    &kp F6    &kp F11       &none     &kp RCTRL  &kp RSHFT  &kp RALT  &kp RGUI
+                &none     &kp F1    &kp F2    &kp F3    &kp F10       &none     &none      &none      &none     &none
+                          &none     &none     &none                   &none     &none
+            >;
         };
 
         MOUSE {
             display-name = "MOUSE";
             bindings = <
-            // ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮   ╭─────────────┬──────────────┬─────────────┬─────────────┬────────────────╮
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &mkp LCLK     &mkp MCLK     &mkp RCLK      &trans            &trans        &mkp LCLK      &mkp MCLK     &mkp RCLK     &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &trans        &mo SCROLL    &mo SNIPE      &trans            &trans        &mo SCROLL     &mo SNIPE     &trans        &trans
-            // ╰─────────────┴─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┴─────────────┴────────────────╯
-                                             &trans        &trans         &trans            &trans        &trans
-            //                             ╰─────────────┴──────────────┴─────────────╯   ╰─────────────┴──────────────╯
+                &trans    &trans    &trans    &trans    &trans        &trans    &trans     &trans     &trans    &trans
+                &trans    &mkp LCLK &mkp MCLK &mkp RCLK &trans        &trans    &mkp LCLK  &mkp MCLK  &mkp RCLK &trans
+                &trans    &trans    &mo SCROLL &mo SNIPE &trans       &trans    &mo SCROLL &mo SNIPE  &trans    &trans
+                          &trans    &trans    &trans                  &trans    &trans
             >;
-            sensor-bindings = <&scroll_encoder>;
         };
 
         SCROLL {
             display-name = "SCROLL";
             bindings = <
-            // ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮   ╭─────────────┬──────────────┬─────────────┬─────────────┬────────────────╮
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ╰─────────────┴─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┴─────────────┴────────────────╯
-                                             &trans        &trans         &trans            &trans        &trans
-            //                             ╰─────────────┴──────────────┴─────────────╯   ╰─────────────┴──────────────╯
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                       &trans &trans &trans           &trans &trans
             >;
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
 
         SNIPE {
             display-name = "SNIPE";
             bindings = <
-            // ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮   ╭─────────────┬──────────────┬─────────────┬─────────────┬────────────────╮
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ╰─────────────┴─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┴─────────────┴────────────────╯
-                                             &trans        &trans         &trans            &trans        &trans
-            //                             ╰─────────────┴──────────────┴─────────────╯   ╰─────────────┴──────────────╯
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                       &trans &trans &trans           &trans &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         AUTO {
             display-name = "AUTO";
             bindings = <
-            // ╭─────────────┬─────────────┬─────────────┬──────────────┬─────────────╮   ╭─────────────┬──────────────┬─────────────┬─────────────┬────────────────╮
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ├─────────────┼─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┼─────────────┼────────────────┤
-                 &trans        &trans        &trans        &trans         &trans            &trans        &trans         &trans        &trans        &trans
-            // ╰─────────────┴─────────────┼─────────────┼──────────────┼─────────────┤   ├─────────────┼──────────────┼─────────────┴─────────────┴────────────────╯
-                                             &trans        &trans         &trans            &trans        &trans
-            //                             ╰─────────────┴──────────────┴─────────────╯   ╰─────────────┴──────────────╯
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
+                       &trans &trans &trans           &trans &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };

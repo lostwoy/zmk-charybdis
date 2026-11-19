@@ -1,9 +1,11 @@
 #pragma once
 
-#define BASE 0
-#define NUMS 1
-#define DANGER 2
-#define MOUSE 3
-#define SCROLL 4
-#define SNIPE 5
-#define AUTO 6
+#define BASE   0
+#define NAV    1
+#define NUM    2
+#define SYM    3
+#define FUNC   4
+#define MOUSE  5
+#define SCROLL 6
+#define SNIPE  7
+#define AUTO   8
