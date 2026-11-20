@@ -7,9 +7,11 @@
 #define MOUSE_TIMEOUT 800
 
 // Keys that keep MOUSE active instead of dropping back to BASE:
-// left home row clicks (11 12 13), right home row (16 17 18), left thumbs (30 31 32)
+// left home row mods (10-13, for shift/ctrl-click), scroll/snipe holds (22 23),
+// thumb clicks (30 31 32)
 &zip_temp_layer {
-  excluded-positions = <11 12 13 16 17 18 30 31 32>;
+  require-prior-idle-ms = <200>; // ignore ball jostles right after typing
+  excluded-positions = <10 11 12 13 22 23 30 31 32>;
 };
 
 / {
