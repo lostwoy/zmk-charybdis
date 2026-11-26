@@ -1,4 +1,4 @@
-# ZMK Config for Charybdis 5-Column
+# ZMK Config for Charybdis Nano
 
 ## Build Gallery
 
